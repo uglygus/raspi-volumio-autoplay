@@ -1,0 +1,15 @@
+[Unit]
+Description=Volumio autoplay. Press Play at startup.
+After=network.target
+
+[Service]
+Type=simple
+RemainAfterExit=true
+StandardOutput=file:/var/log/autoplay.log
+StandardError=file:/var/log/autoplay.log
+ExecStart=/usr/local/bin/volumio-autoplay.sh
+#ExecStop=/path/to/stop/script arguments
+
+
+[Install]
+WantedBy=multi-user.target
